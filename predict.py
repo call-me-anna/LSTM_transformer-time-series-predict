@@ -10,7 +10,7 @@ from transformer_model import TransformerPredictor
 from lstm_transformer_model import LSTMTransformerPredictor
 
 def load_results(results_dir='results'):
-    """加载所有训练结果"""
+    """加载所有训练结果  """
     all_results = {}
     result_files = glob(os.path.join(results_dir, 'training_run_*.json'))
     
