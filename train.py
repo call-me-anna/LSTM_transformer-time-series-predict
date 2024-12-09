@@ -78,7 +78,8 @@ def evaluate_model(model, test_loader, scaler, device='cuda'):
     return predictions, actuals, mse, mae
 
 def cleanup():
-    """清理所有缓存和临时文件"""
+    """清理所有缓存和临
+    时文件"""
     # 清理模型文件
     model_files = ['lstm_model.pth', 'transformer_model.pth', 'lstm_transformer_model.pth']
     for file in model_files:
@@ -95,7 +96,7 @@ def cleanup():
         for dir in dirs:
             if dir == '__pycache__':
                 shutil.rmtree(os.path.join(root, dir))
-    
+
     # 清理PyTorch缓存
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
@@ -152,7 +153,6 @@ def main():
     # 生成唯一的运行ID
     run_id = datetime.datetime.now().strftime('%Y%m%d_%H%M%S')
     print(f"Starting training run: {run_id}")
-    
     # 设置设备
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f'Using device: {device}')
