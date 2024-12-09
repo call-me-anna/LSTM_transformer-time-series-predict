@@ -12,6 +12,8 @@ import shutil
 import json
 import datetime
 
+
+# train model . 
 def train_model(model, train_loader, test_loader, criterion, optimizer, num_epochs=100, device='cuda'):
     train_losses = []
     test_losses = []
